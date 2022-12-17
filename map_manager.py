@@ -152,17 +152,14 @@ start_geoserver_button = tk.Button(
     root, text="Start GeoServer", command=create_geoserver_thread)
 start_geoserver_button.grid(row=1, column=0, padx=5, pady=5)
 
-
 stop_geoserver_button = tk.Button(
     root, text="Stop GeoServer", command=stop_geoserver)
 stop_geoserver_button.grid(row=1, column=1, padx=5, pady=5)
-
 
 launch_geoserver_button = tk.Button(
     root, text="GeoSever Configuration", command=launch_geoserver_interface)
 launch_geoserver_button.grid(row=1, column=2, padx=5, pady=5)
 
-# create status label
 statusLabel = tk.Label(root, text="GeoServer Stopped", fg="red")
 statusLabel.grid(row=0, columnspan=2, padx=5, pady=5)
 
@@ -172,21 +169,17 @@ dfa_status.grid(row=2, columnspan=2, padx=5, pady=5)
 photon_status = tk.Label(root, text="Photon Map Stopped", fg="red")
 photon_status.grid(row=5, columnspan=2, padx=5, pady=5)
 
-
 create_database_button = tk.Button(
     root, text="Create Database", command=create_database)
 create_database_button.grid(row=4, column=0, padx=5, pady=5)
-
 
 select_database_button = tk.Button(
     root, text="Select Database", command=select_database)
 select_database_button.grid(row=4, column=1, padx=5, pady=5)
 
-
 start_df_aggregator_button = tk.Button(
     root, text="Start DF-Aggregator", command=create_df_aggregator_thread)
 start_df_aggregator_button.grid(row=3, column=0, padx=5, pady=5)
-
 
 stop_df_aggregator_button = tk.Button(
     root, text="Stop DF-Aggregator", command=stop_df_aggregator)
@@ -219,3 +212,4 @@ edit_dfa_layers_button.grid(row=4, column=2, padx=5, pady=5)
 # run window
 if __name__ == "__main__":
     root.mainloop()
+
