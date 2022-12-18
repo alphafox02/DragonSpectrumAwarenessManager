@@ -88,9 +88,11 @@ def start_geoserver():
 
 
 def stop_geoserver():
+    global start_geoserver_thread_started
     geo_status.config(text="Stopped", fg="red")
     os.chdir('/usr/src/geoserver/bin')
     subprocess.call(['sudo', 'sh', 'shutdown.sh'])
+    start_geoserver_thread_started = False
 
 
 def launch_geoserver_interface():
