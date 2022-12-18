@@ -211,7 +211,6 @@ launch_geoserver_button = tk.Button(
     root, text="Configuration", command=launch_geoserver_interface)
 launch_geoserver_button.grid(row=1, column=2, padx=5, pady=5)
 
-
 geo_label = tk.Label(root, text="GeoServer",
                      font="bold", fg="blue", underline=1)
 geo_label.grid(row=0, column=0, padx=5, pady=5)
