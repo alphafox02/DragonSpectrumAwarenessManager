@@ -213,6 +213,7 @@ launch_geoserver_button = tk.Button(
     root, text="Configuration", command=launch_geoserver_interface)
 launch_geoserver_button.grid(row=1, column=2, padx=5, pady=5)
 
+
 geo_label = tk.Label(root, text="GeoServer",
                      font="bold", fg="blue", underline=1)
 geo_label.grid(row=0, column=0, padx=5, pady=5)
@@ -223,11 +224,11 @@ dfa_label.grid(row=2, column=0, padx=5, pady=5)
 
 photon_label = tk.Label(root, text="Photon Map",
                         font="bold", fg="blue", underline=1)
-photon_label.grid(row=5, column=0, padx=5, pady=5)
+photon_label.grid(row=9, column=0, padx=5, pady=5)
 
 signal_label = tk.Label(root, text="Signal Server GUI",
                         font="bold", fg="blue", underline=1)
-signal_label.grid(row=8, column=0, padx=5, pady=5)
+signal_label.grid(row=7, column=0, padx=5, pady=5)
 
 geo_status = tk.Label(root, text="Stopped", fg="red")
 geo_status.grid(row=0, columnspan=3, padx=5, pady=5)
@@ -236,10 +237,10 @@ dfa_status = tk.Label(root, text="Stopped", fg="red")
 dfa_status.grid(row=2, columnspan=3, padx=5, pady=5)
 
 photon_status = tk.Label(root, text="Stopped", fg="red")
-photon_status.grid(row=5, columnspan=3, padx=5, pady=5)
+photon_status.grid(row=9, columnspan=3, padx=5, pady=5)
 
 signal_status = tk.Label(root, text="Stopped", fg="red")
-signal_status.grid(row=8, columnspan=3, padx=5, pady=5)
+signal_status.grid(row=7, columnspan=3, padx=5, pady=5)
 
 create_database_button = tk.Button(
     root, text="Create Database", command=create_database)
@@ -263,19 +264,19 @@ launch_dfa_button.grid(row=3, column=2, padx=5, pady=5)
 
 start_photon_button = tk.Button(
     root, text="Start", command=create_photon_thread)
-start_photon_button.grid(row=6, column=0, padx=5, pady=5)
+start_photon_button.grid(row=10, column=0, padx=5, pady=5)
 
 stop_photon_button = tk.Button(
     root, text="Stop", command=stop_photon)
-stop_photon_button.grid(row=6, column=1, padx=5, pady=5)
+stop_photon_button.grid(row=10, column=1, padx=5, pady=5)
 
 launch_photon_button = tk.Button(
     root, text="Interface", command=launch_photon_interface)
-launch_photon_button.grid(row=6, column=2, padx=5, pady=5)
+launch_photon_button.grid(row=10, column=2, padx=5, pady=5)
 
 edit_photon_layers_button = tk.Button(
     root, text="Edit Map Layers", command=edit_photon_layers)
-edit_photon_layers_button.grid(row=7, column=2, padx=5, pady=5)
+edit_photon_layers_button.grid(row=11, column=2, padx=5, pady=5)
 
 edit_dfa_layers_button = tk.Button(
     root, text="Edit Map Layers", command=edit_dfa_layers)
@@ -283,18 +284,17 @@ edit_dfa_layers_button.grid(row=4, column=2, padx=5, pady=5)
 
 start_signal_server_button = tk.Button(
     root, text="Start", command=create_signal_server_thread)
-start_signal_server_button.grid(row=9, column=0, padx=5, pady=5)
+start_signal_server_button.grid(row=8, column=0, padx=5, pady=5)
 
 stop_signal_server_button = tk.Button(
     root, text="Stop", command=stop_signal_server_gui)
-stop_signal_server_button.grid(row=9, column=1, padx=5, pady=5)
+stop_signal_server_button.grid(row=8, column=1, padx=5, pady=5)
 
 launch_signal_server_button = tk.Button(
     root, text="Interface", command=launch_signal_server_interface)
-launch_signal_server_button.grid(row=9, column=2, padx=5, pady=5)
+launch_signal_server_button.grid(row=8, column=2, padx=5, pady=5)
 
 # run window
 if __name__ == "__main__":
     root.mainloop()
-
 
