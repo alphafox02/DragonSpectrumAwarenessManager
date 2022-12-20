@@ -14,7 +14,7 @@ import subprocess
 import os
 # create window object
 root = tk.Tk()
-root.title('Map Manager')
+root.title('Dragon Spectrum Awareness Manager')
 # position window in center of screen
 windowWidth = root.winfo_reqwidth()
 windowHeight = root.winfo_reqheight()
