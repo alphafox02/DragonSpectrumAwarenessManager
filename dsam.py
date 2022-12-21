@@ -4,7 +4,7 @@
 # - remove use of global variables
 # - separate functions into different files
 # - separate GUI from functions
-# - signalserver_gui port 8083 hardcoded at the bottom of
+# - signalserver_gui port 8082 hardcoded at the bottom of
 # /usr/src/signalserver_gui/signalserver_gui/__main__.py
 
 import threading
@@ -53,7 +53,7 @@ def create_signal_server_thread():
 
 def start_geoserver():
     global start_geoserver_thread_started
-    geo_status.config(text="Running on localhost:8080", fg="green")
+    geo_status.config(text="localhost:8080/geoserver", fg="green")
     if start_geoserver_thread_started == False:
         start_geoserver_thread_started = True
         os.chdir('/usr/src/geoserver/bin')
@@ -78,7 +78,7 @@ def start_df_aggregator():
         return
     elif db_file_global != "" and start_df_aggregator_thread_started == False:
         start_df_aggregator_thread_started = True
-        dfa_status.config(text="Running on localhost:8081", fg="green")
+        dfa_status.config(text="localhost:8081", fg="green")
         os.chdir('/usr/src/df-aggregator')
         subprocess.call(
             ['python3', '/usr/src/df-aggregator/df-aggregator.py', '-d', db_file_global, '-o', '--port', '8081'])
@@ -102,12 +102,12 @@ def stop_df_aggregator():
 
 def start_signal_server_gui():
     global start_signal_server_thread_started
-    signal_status.config(text="Running on localhost:8083", fg="green")
+    signal_status.config(text="localhost:8082", fg="green")
     if start_signal_server_thread_started == False:
         start_signal_server_thread_started = True
         os.chdir('/usr/src/signalserver_gui')
         subprocess.call(
-            ['sudo', 'python3', '-m', 'signalserver_gui', '-p', '8083'])
+            ['sudo', 'python3', '-m', 'signalserver_gui', '-p', '8082'])
     else:
         print("Signal Server already started")
 
@@ -116,7 +116,7 @@ def stop_signal_server_gui():
     global start_signal_server_thread_started
     signal_status.config(text="Stopped", fg="red")
     find = subprocess.Popen(['ps', 'aux'], stdout=subprocess.PIPE)
-    grep = subprocess.Popen(['grep', '8083'],
+    grep = subprocess.Popen(['grep', '8082'],
                             stdin=find.stdout, stdout=subprocess.PIPE)
     find.stdout.close()
     output = grep.communicate()[0]
@@ -128,11 +128,11 @@ def stop_signal_server_gui():
 
 def start_photon():
     global start_photon_thread_started
-    photon_status.config(text="Running on localhost:8082", fg="green")
+    photon_status.config(text="localhost:8083", fg="green")
     if start_photon_thread_started == False:
         start_photon_thread_started = True
         os.chdir('/usr/src/photonmap/html/')
-        subprocess.call(['python3', '-m', 'http.server', '8082'])
+        subprocess.call(['python3', '-m', 'http.server', '8083'])
     else:
         print("Photon Map already started")
 
